@@ -2,6 +2,7 @@ import Image from "next/image"
 import { listenNowAlbums, madeForYouAlbums } from "@/data/albums"
 // import { playlists } from "@/data/playlists"
 import { PlusCircledIcon } from "@radix-ui/react-icons"
+import axios from "axios"
 
 import { Button } from "@/components/ui/button"
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
@@ -11,6 +12,22 @@ import { AlbumArtwork } from "@/components/dashboard/album-artwork"
 import { PodcastEmptyPlaceholder } from "@/components/dashboard/podcast-empty-placeholder"
 
 export default async function LandingPage() {
+  const options = {
+    method: "GET",
+    url: "https://deezerdevs-deezer.p.rapidapi.com/track/%7Bid%7D",
+    headers: {
+      "X-RapidAPI-Key": "9bd3de3debmsh321a90d9d59aa01p1b4b9ejsn6c3047b0453b",
+      "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
+    },
+  }
+
+  try {
+    const response = await axios.request(options)
+    console.log(response.data)
+  } catch (error) {
+    console.error(error)
+  }
+
   return (
     <div>
       <div className="h-full px-4 py-6 lg:px-8">

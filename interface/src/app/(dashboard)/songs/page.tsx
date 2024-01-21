@@ -1,3 +1,6 @@
-export default function Page() {
+export default async function Page() {
+  // fetch every sounds
+
+
   return <div>Page</div>
 }

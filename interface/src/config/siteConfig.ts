@@ -1,7 +1,7 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: "Kazeki",
+  name: "Uta",
   description: "Ai driven app for Real Estate Agents and Property Managers",
   mainNav: [],
   url: process.env.WEBSITE_URL,
