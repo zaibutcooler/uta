@@ -15,13 +15,11 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
     <>
       <div>
         <Header />
-        <div className="border-t">
+        <div className="">
           <div className="bg-background">
-            <div className="grid lg:grid-cols-5">
+            <div className="flex">
               <Sidebar playlists={playlists} className="hidden lg:block" />
-              <div className="col-span-3 lg:col-span-4 lg:border-l">
-                {children}
-              </div>
+              <div className="w-full">{children}</div>
             </div>
           </div>
         </div>
